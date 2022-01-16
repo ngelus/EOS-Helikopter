@@ -1,7 +1,7 @@
 // EOS 1.5 - Programm
 f:FENSTER
-//f.gitterein()
-f.gitteraus()
+f.gitterein()
+//f.gitteraus()
 f.höheSetzen(1080)
 f.breiteSetzen(1920)
 f.hintergrundfarbeSetzen(Hellblau)
@@ -20,11 +20,58 @@ strasse.eckenSetzen(-960,-100,960,-350)
 strasse.füllfarbeSetzen(Grau)
 strasse.randfarbeSetzen(Grau)
 
+
 streifen1:RECHTECK
-streifen1.eckenSetzen(-900,-220,-850,-230)
+streifen1.eckenSetzen(-900,-220,-800,-230)
 streifen1.füllfarbeSetzen(Weiss)
 streifen1.randfarbeSetzen(Weiss)
 
+streifen2:RECHTECK
+streifen2.eckenSetzen(-700,-220,-600,-230)
+streifen2.füllfarbeSetzen(Weiss)
+streifen2.randfarbeSetzen(Weiss)
+
+streifen3:RECHTECK
+streifen3.eckenSetzen(-500,-220,-400,-230)
+streifen3.füllfarbeSetzen(Weiss)
+streifen3.randfarbeSetzen(Weiss)
+
+streifen4:RECHTECK
+streifen4.eckenSetzen(-300,-220,-200,-230)
+streifen4.füllfarbeSetzen(Weiss)
+streifen4.randfarbeSetzen(Weiss)
+
+streifen5:RECHTECK
+streifen5.eckenSetzen(-100,-220,0,-230)
+streifen5.füllfarbeSetzen(Weiss)
+streifen5.randfarbeSetzen(Weiss)
+
+streifen6:RECHTECK
+streifen6.eckenSetzen(100,-220,200,-230)
+streifen6.füllfarbeSetzen(Weiss)
+streifen6.randfarbeSetzen(Weiss)
+
+streifen7:RECHTECK
+streifen7.eckenSetzen(300,-220,400,-230)
+streifen7.füllfarbeSetzen(Weiss)
+streifen7.randfarbeSetzen(Weiss)
+
+streifen8:RECHTECK
+streifen8.eckenSetzen(500,-220,600,-230)
+streifen8.füllfarbeSetzen(Weiss)
+streifen8.randfarbeSetzen(Weiss)
+
+streifen9:RECHTECK
+streifen9.eckenSetzen(700,-220,800,-230)
+streifen9.füllfarbeSetzen(Weiss)
+streifen9.randfarbeSetzen(Weiss)
+
+streifen10:RECHTECK
+streifen10.eckenSetzen(900,-220,1000,-230)
+streifen10.füllfarbeSetzen(Weiss)
+streifen10.randfarbeSetzen(Weiss)
+
+// ### HELIKOPTER: ###
 heliCockpit:KREIS
 heliCockpit.mittelpunktSetzen(0,0)
 heliCockpit.radiusSetzen(50)
@@ -62,9 +109,13 @@ heliRotorStock:RECHTECK
 heliRotorStock.eckenSetzen(135,100,145,50)
 heliRotorStock.füllfarbeSetzen(Schwarz)
 
-heliObererRotor:RECHTECK
-heliObererRotor.eckenSetzen(30,108,250,100)
-heliObererRotor.füllfarbeSetzen(Schwarz)
+heliObererRotor1:RECHTECK
+heliObererRotor1.eckenSetzen(30,108,140,100)
+heliObererRotor1.füllfarbeSetzen(Grau)
+
+heliObererRotor2:RECHTECK
+heliObererRotor2.eckenSetzen(140,108,250,100)
+heliObererRotor2.füllfarbeSetzen(Schwarz)
 
 heliSchiene:RECHTECK
 heliSchiene.eckenSetzen(0,-95,300,-100)
@@ -79,6 +130,45 @@ heliBeinRechts:RECHTECK
 heliBeinRechts.eckenSetzen(220,-68,290,-73)
 heliBeinRechts.füllfarbeSetzen(Schwarz)
 heliBeinRechts.drehen(-45)
+// ###########
+
+liegeKopfteil:RECHTECK
+liegeKopfteil.eckenSetzen(-85,25,-30,15)
+liegeKopfteil.füllfarbeSetzen(Gelb)
+liegeKopfteil.randfarbeSetzen(Gelb)
+liegeKopfteil.drehen(-45)
+
+liegeBett:RECHTECK
+liegeBett.eckenSetzen(-50,5,100,-5)
+liegeBett.füllfarbeSetzen(Gelb)
+liegeBett.randfarbeSetzen(Gelb)
+
+liegeBeinLinks:KREIS
+liegeBeinLinks.mittelpunktSetzen(-10,-15)
+liegeBeinLinks.füllfarbeSetzen(Schwarz)
+
+liegeBeinRechts:KREIS
+liegeBeinRechts.mittelpunktSetzen(60,-15)
+liegeBeinRechts.füllfarbeSetzen(Schwarz)
+
+menschKörper:RECHTECK
+menschKörper.eckenSetzen(-30,30,40,10)
+
+menschKopf:KREIS
+menschKopf.mittelpunktSetzen(-40,35)
+menschKopf.radiusSetzen(15)
+
+menschArmRechts:RECHTECK
+menschArmRechts.eckenSetzen(-20,20,20,10)
+
+menschArmLinks:RECHTECK
+menschArmLinks.eckenSetzen(-20,35,20,30)
+
+menschBeinRechts:RECHTECK
+menschBeinRechts.eckenSetzen(40,20,80,10)
+
+menschBeinLinks:RECHTECK
+menschBeinLinks.eckenSetzen(40,25,75,20)
 
 heliHintererRotor:GRUPPE
 heliHintererRotor.schlucke(heliHintererRotor1)
@@ -94,14 +184,53 @@ heli.schlucke(heliText)
 heli.schlucke(heliHinterteil)
 heli.schlucke(heliHintererRotor)
 heli.schlucke(heliRotorStock)
-heli.schlucke(heliObererRotor)
+heli.schlucke(heliObererRotor1)
+heli.schlucke(heliObererRotor2)
 
 streifen:GRUPPE
 streifen.schlucke(streifen1)
+streifen.schlucke(streifen2)
+streifen.schlucke(streifen3)
+streifen.schlucke(streifen4)
+streifen.schlucke(streifen5)
+streifen.schlucke(streifen6)
+streifen.schlucke(streifen7)
+streifen.schlucke(streifen8)
+streifen.schlucke(streifen9)
+streifen.schlucke(streifen10)
 
-heli.verschiebenNach(0,-50)
+liege:GRUPPE
+liege.schlucke(liegeBeinRechts)
+liege.schlucke(liegeBeinLinks)
+liege.schlucke(liegeKopfteil)
+liege.schlucke(liegeBett)
+
+ulrichDerKek:GRUPPE
+ulrichDerKek.schlucke(menschKörper)
+ulrichDerKek.schlucke(menschKopf)
+ulrichDerKek.schlucke(menschArmRechts)
+ulrichDerKek.schlucke(menschArmLinks)
+ulrichDerKek.schlucke(menschBeinRechts)
+ulrichDerKek.schlucke(menschBeinLinks)
+
+trage:GRUPPE
+trage.schlucke(liege)
+trage.schlucke(ulrichDerKek)
+
+heli.verschiebenNach(0,-300)
 
 f.zeichne(gras)
 f.zeichne(strasse)
+
 f.zeichne(streifen)
 f.zeichne(heli)
+f.zeichne(liege)
+f.zeichne(ulrichDerKek)
+
+wiederhole immer
+   heliObererRotor1.füllfarbeSetzen(Schwarz)
+   heliObererRotor2.füllfarbeSetzen(Grau)
+   heliObererRotor1.füllfarbeSetzen(Grau)
+   heliObererRotor2.füllfarbeSetzen(Schwarz)
+   heliHintererRotor.drehen(5)
+*wiederhole
