@@ -130,6 +130,11 @@ heliBeinRechts:RECHTECK
 heliBeinRechts.eckenSetzen(220,-68,290,-73)
 heliBeinRechts.füllfarbeSetzen(Schwarz)
 heliBeinRechts.drehen(-45)
+
+seil:RECHTECK
+seil.eckenSetzen(135,-50,145,-55)
+seil.füllfarbeSetzen(Grau)
+
 // ###########
 
 liegeKopfteil:RECHTECK
@@ -186,6 +191,7 @@ heli.schlucke(heliHintererRotor)
 heli.schlucke(heliRotorStock)
 heli.schlucke(heliObererRotor1)
 heli.schlucke(heliObererRotor2)
+heli.schlucke(seil)
 
 streifen:GRUPPE
 streifen.schlucke(streifen1)
@@ -217,20 +223,42 @@ trage:GRUPPE
 trage.schlucke(liege)
 trage.schlucke(ulrichDerKek)
 
-heli.verschiebenNach(0,-300)
-
 f.zeichne(gras)
 f.zeichne(strasse)
 
 f.zeichne(streifen)
+f.zeichne(trage)
 f.zeichne(heli)
-f.zeichne(liege)
-f.zeichne(ulrichDerKek)
+
+
 
 wiederhole immer
-   heliObererRotor1.füllfarbeSetzen(Schwarz)
-   heliObererRotor2.füllfarbeSetzen(Grau)
-   heliObererRotor1.füllfarbeSetzen(Grau)
-   heliObererRotor2.füllfarbeSetzen(Schwarz)
-   heliHintererRotor.drehen(5)
+   heli.verschiebenNach(1000,500)
+   trage.verschiebenNach(0,-200)
+   Seil.unten:=340
+   
+   wiederhole 1100 mal
+      heli.verschieben(-1,0)
+      //heliObererRotor1.füllfarbeSetzen(Schwarz)
+      //heliObererRotor2.füllfarbeSetzen(Grau)
+      //heliObererRotor1.füllfarbeSetzen(Grau)
+      //heliObererRotor2.füllfarbeSetzen(Schwarz)
+      //heliHintererRotor.drehen(5)
+   *wiederhole
+   
+   wiederhole
+      Seil.unten:=Seil.unten-1
+   *wiederhole bis 
+   Seil.unten=-250
+   
+   wiederhole solange 
+      Seil.unten<340
+      Seil.unten:=Seil.unten+1
+      trage.verschieben(0,1)
+   *wiederhole
+   
+   wiederhole
+      
+   *wiederhole
+   
 *wiederhole
