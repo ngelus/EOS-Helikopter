@@ -118,7 +118,7 @@ heliObererRotor2.eckenSetzen(140,108,250,100)
 heliObererRotor2.füllfarbeSetzen(Schwarz)
 
 heliSchiene:RECHTECK
-heliSchiene.eckenSetzen(0,-95,300,-100)
+heliSchiene.eckenSetzen(0,-95,270,-100)
 heliSchiene.füllfarbeSetzen(Schwarz)
 
 heliBeinLinks:RECHTECK
@@ -127,9 +127,9 @@ heliBeinLinks.füllfarbeSetzen(Schwarz)
 heliBeinLinks.drehen(45)
 
 heliBeinRechts:RECHTECK
-heliBeinRechts.eckenSetzen(220,-68,290,-73)
+heliBeinRechts.eckenSetzen(200,-68,270,-73)
 heliBeinRechts.füllfarbeSetzen(Schwarz)
-heliBeinRechts.drehen(-45)
+heliBeinRechts.drehen(45)
 
 seil:RECHTECK
 seil.eckenSetzen(135,-50,145,-55)
@@ -236,29 +236,48 @@ wiederhole immer
    heli.verschiebenNach(1000,500)
    trage.verschiebenNach(0,-200)
    Seil.unten:=340
+   trage.sichtbar:=wahr
    
    wiederhole 1100 mal
       heli.verschieben(-1,0)
-      //heliObererRotor1.füllfarbeSetzen(Schwarz)
-      //heliObererRotor2.füllfarbeSetzen(Grau)
-      //heliObererRotor1.füllfarbeSetzen(Grau)
-      //heliObererRotor2.füllfarbeSetzen(Schwarz)
-      //heliHintererRotor.drehen(5)
+      heliObererRotor1.füllfarbeSetzen(Schwarz)
+      heliObererRotor2.füllfarbeSetzen(Grau)
+      heliObererRotor1.füllfarbeSetzen(Grau)
+      heliObererRotor2.füllfarbeSetzen(Schwarz)
+      heliHintererRotor.drehen(5)
    *wiederhole
    
    wiederhole
       Seil.unten:=Seil.unten-1
+      heliObererRotor1.füllfarbeSetzen(Schwarz)
+      heliObererRotor2.füllfarbeSetzen(Grau)
+      heliObererRotor1.füllfarbeSetzen(Grau)
+      heliObererRotor2.füllfarbeSetzen(Schwarz)
+      heliHintererRotor.drehen(5)
    *wiederhole bis 
    Seil.unten=-250
    
    wiederhole solange 
       Seil.unten<340
+      heliObererRotor1.füllfarbeSetzen(Schwarz)
+      heliObererRotor2.füllfarbeSetzen(Grau)
+      heliObererRotor1.füllfarbeSetzen(Grau)
+      heliObererRotor2.füllfarbeSetzen(Schwarz)
+      heliHintererRotor.drehen(5)
       Seil.unten:=Seil.unten+1
       trage.verschieben(0,1)
    *wiederhole
    
+   trage.sichtbar:=falsch
+   
    wiederhole
-      
-   *wiederhole
+      heliObererRotor1.füllfarbeSetzen(Schwarz)
+      heliObererRotor2.füllfarbeSetzen(Grau)
+      heliObererRotor1.füllfarbeSetzen(Grau)
+      heliObererRotor2.füllfarbeSetzen(Schwarz)
+      heliHintererRotor.drehen(5)
+      heli.verschieben(-1,0)
+      trage.verschieben(-1,0)
+   *wiederhole bis heli.rechts=-1000
    
 *wiederhole
