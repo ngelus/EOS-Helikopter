@@ -1,14 +1,9 @@
 // EOS 1.5 - Programm
 f:FENSTER
-f.gitterein()
-//f.gitteraus()
+f.gitteraus()
 f.höheSetzen(1080)
 f.breiteSetzen(1920)
 f.hintergrundfarbeSetzen(Hellblau)
-
-//testKreis:KREIS
-//testKreis.mittelpunktSetzen(0,0)
-//testKreis.radiusSetzen(5)
 
 gras:RECHTECK
 gras.eckenSetzen(-960,0,960,-515)
@@ -71,7 +66,6 @@ streifen10.eckenSetzen(900,-220,1000,-230)
 streifen10.füllfarbeSetzen(Weiss)
 streifen10.randfarbeSetzen(Weiss)
 
-// ### HELIKOPTER: ###
 heliCockpit:KREIS
 heliCockpit.mittelpunktSetzen(0,0)
 heliCockpit.radiusSetzen(50)
@@ -134,8 +128,6 @@ heliBeinRechts.drehen(45)
 seil:RECHTECK
 seil.eckenSetzen(135,-50,145,-55)
 seil.füllfarbeSetzen(Grau)
-
-// ###########
 
 liegeKopfteil:RECHTECK
 liegeKopfteil.eckenSetzen(-85,25,-30,15)
@@ -211,17 +203,17 @@ liege.schlucke(liegeBeinLinks)
 liege.schlucke(liegeKopfteil)
 liege.schlucke(liegeBett)
 
-ulrichDerKek:GRUPPE
-ulrichDerKek.schlucke(menschKörper)
-ulrichDerKek.schlucke(menschKopf)
-ulrichDerKek.schlucke(menschArmRechts)
-ulrichDerKek.schlucke(menschArmLinks)
-ulrichDerKek.schlucke(menschBeinRechts)
-ulrichDerKek.schlucke(menschBeinLinks)
+mensch:GRUPPE
+mensch.schlucke(menschKörper)
+mensch.schlucke(menschKopf)
+mensch.schlucke(menschArmRechts)
+mensch.schlucke(menschArmLinks)
+mensch.schlucke(menschBeinRechts)
+mensch.schlucke(menschBeinLinks)
 
 trage:GRUPPE
 trage.schlucke(liege)
-trage.schlucke(ulrichDerKek)
+trage.schlucke(mensch)
 
 f.zeichne(gras)
 f.zeichne(strasse)
@@ -278,6 +270,7 @@ wiederhole immer
       heliHintererRotor.drehen(5)
       heli.verschieben(-1,0)
       trage.verschieben(-1,0)
-   *wiederhole bis heli.rechts=-1000
+   *wiederhole bis
+   heli.rechts=-1000
    
 *wiederhole
